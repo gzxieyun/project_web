@@ -1,0 +1,145 @@
+/* editinfo-start */
+
+//相关变量
+@info-fs:16px;
+@font-en-text:Tahoma,Arial;      //英文正文字体
+@fm-en-title:Verdana,Arial;     //英文标题字体
+@font-text: SimSun;  //正文字体 宋体
+@font-title : "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif; //适配苹果字体
+
+//颜色
+@color-m:   #efefef;      
+@color-hl:  #f2b01f;      
+@color-s:   #333333;      
+@color-w:   #ffffff;
+
+// 行高 取内容中最大字号对应的行高例如 @f1对应行高设为@lh1
+@lh1: 1;
+@lh2: 1.2;
+@lh3: 1.5;
+@lh4: 1.8;
+@lh5: 2;
+
+.editdemo{width:800px;margin:2em auto;border: #ccc solid 1px;padding: 2em;}
+.editinfo{
+  font-size:@info-fs;
+  color: #333333;
+  font-family:@font-title;
+//  text-align: justify;
+  // 1、重置editinfo下所有元素样式
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  li,
+  p {
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: @info-fs;
+    vertical-align: baseline;
+    line-height: 2em;
+    margin-bottom: 1.5em;
+  }
+  .showpd{
+      p{margin-bottom: 0px!important;}
+  }
+  // 2、定义editinfo基础样式
+  .wrapper {padding: 10px 10px;}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6{
+    font-family: @font-title;
+    font-size: @info-fs;
+  }
+
+  h1 {
+    margin-top: @info-fs;
+    margin-bottom: @info-fs;
+    text-align: center;
+    font-size: @info-fs*1.5;
+    color: @color-s;
+  }
+  h2 {
+    font-size: @info-fs*1.2;
+    color: @color-s;
+    margin-bottom: @info-fs;
+  }
+
+  h3 {
+    font-weight: bold;
+    margin-bottom: @info-fs;
+    text-align: left;
+  }
+  h4 {
+    color: #666;
+    text-align: center;
+    font-size:  @info-fs;
+    margin-bottom: @info-fs;
+  }
+  //p, ol li{margin-bottom:5px;margin-top:5px;}
+
+  ul{margin-bottom: @info-fs;}
+  ul li{margin-bottom: 0rem;margin-left: @info-fs; list-style-type: disc;}
+  ol li{
+    list-style-type:decimal;
+    list-style-position: outside;
+    margin-left: @info-fs*2;
+  }
+  hr {
+    margin: @info-fs*0.5 0rem @info-fs 0rem;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+  }
+  img {margin: @info-fs*1.5 auto;display: block;width: 100%;}
+  em {display: block;width: 100%;text-align: center;margin-bottom: 2em;margin-top: -1em;font-size: 0.8em;color: #666;font-style: normal;}
+
+//文字图片间隔
+  &>div{
+    line-height: 0rem;
+  }
+
+  &>span{
+    display: inline-block;
+    line-height: @lh2;
+    margin: @info-fs*0.6 0;
+  }
+
+  &>p>img,&>span>img ,&>p>span>img ,&>p>span{
+    margin-top: 0em;
+    margin-bottom: 0em;
+    padding: 0rem;
+  }
+
+//  图片对齐设置后间距设置
+  &>p>img[align="left"]{
+    margin-right: @info-fs*1.5;
+    width: auto!important;
+  }
+  &>p>img[align="right"]{
+    margin-left: @info-fs*1.5;
+    width: auto!important;
+  }
+// 取消br
+  br{
+    display: none;
+  }
+
+  /*重置默认表格样式*/
+  table {border-collapse: collapse; border-spacing: 0; vertical-align: middle;border: 1px solid #e5e5e5;width: 100%;margin: @info-fs 0;}
+  caption, th, td {text-align: left; font-weight: normal; vertical-align: middle;}
+  th,td{border: 1px solid #e5e5e5;padding: @info-fs*0.5; line-height:@lh3;}
+  th{background-color: #f5f5f5;}
+}
+
+/* editinfo-end */
